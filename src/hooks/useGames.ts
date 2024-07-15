@@ -15,13 +15,6 @@ export interface Game {
   metacritic: number;
 }
 
-interface fetchGameResponse {
-  count: number;
-  results: Game[];
-}
-
-//
-
 const useGames = (selectedGenre: Genre | null) =>
   useData<Game>("/games", { params: { genres: selectedGenre?.id } }, [
     selectedGenre?.id,
